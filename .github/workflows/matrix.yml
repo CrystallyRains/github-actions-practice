@@ -25,3 +25,12 @@ jobs:
       - name: Print Python version
         run: |
           python --version
+
+      - name: Intentionally fail one job
+        if: matrix.python-version == '3.11' && matrix.os == 'ubuntu-latest'
+        run: exit 1
+
+
+
+
+
