@@ -1,0 +1,34 @@
+# Goal: Identify the runner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  one:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print OS
+        run: |
+          echo "OS: Ubuntu"
+          echo "Hostname: $(hostname)"
+          echo "User: $(whoami)"
+
+  two:
+    runs-on: windows-latest
+    steps:
+      - name: Show runner details
+        shell: pwsh
+        run: |
+          Write-Host "OS: Windows"
+          Write-Host "Hostname: $env:COMPUTERNAME"
+          Write-Host "User: $env:USERNAME"
+
+
+  three:
+    runs-on: macos-latest
+    steps:
+      - name: Show runner details
+        run: |
+          echo "OS: macOS"
+          echo "Hostname: $(hostname)"
+          echo "User: $(whoami)"
