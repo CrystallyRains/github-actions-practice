@@ -22,7 +22,7 @@ jobs:
         run: echo "The branch that triggered this run is ${{ github.ref_name }}"
 
       - name: List the files in the repo
-        run: ls-la
+        run: ls -la
 
       - name: Print the runner's OS
         run: echo "The operating system of this runner is ${{ runner.os }}"
