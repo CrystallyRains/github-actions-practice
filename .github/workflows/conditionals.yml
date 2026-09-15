@@ -15,7 +15,7 @@ jobs:
         run: echo "This step runs only on main"
 
       - name: Successful step
-        run: exit 1
+        run: echo "This step succeeds"
 
       - name: Run if previous step failed
         if: failure()
