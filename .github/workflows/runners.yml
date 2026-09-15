@@ -7,11 +7,19 @@ jobs:
   one:
     runs-on: ubuntu-latest
     steps:
-      - name: Print OS
+      - name: Check pre-installed tools
         run: |
-          echo "OS: Ubuntu"
-          echo "Hostname: $(hostname)"
-          echo "User: $(whoami)"
+          echo "Docker:"
+          docker --version
+
+          echo "Python:"
+          python3 --version
+
+          echo "Node:"
+          node --version
+
+          echo "Git:"
+          git --version
 
   two:
     runs-on: windows-latest
