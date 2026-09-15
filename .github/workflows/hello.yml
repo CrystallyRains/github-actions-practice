@@ -26,3 +26,6 @@ jobs:
 
       - name: Print the runner's OS
         run: echo "The operating system of this runner is ${{ runner.os }}"
+
+      - name: Intentionally fail the workflow
+        run: exit 1
