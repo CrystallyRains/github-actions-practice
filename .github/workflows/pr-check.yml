@@ -2,11 +2,12 @@
 
 on: 
   pull_request:
+    types: [opened, synchronize]
     branches: [main]
 
 jobs:
   pr_check:
     runs-on: ubuntu-latest
     steps:
-      - name: Check PR is running for which branch
-        run: echo "PR check running for branch: ${{ github.ref_name }}"
+      - name: Print PR branch
+        run: echo "PR check running for branch: ${{ github.head_ref}}"
