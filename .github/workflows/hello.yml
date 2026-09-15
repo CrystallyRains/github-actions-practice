@@ -1,0 +1,16 @@
+# Goal: To greet
+name: Greet and get code
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v7
+
+      - name: Greet with hello
+        run: echo "Hello from GitHub Actions!"
