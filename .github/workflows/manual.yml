@@ -1,0 +1,20 @@
+# Goal: create a manual workflow
+name: Manual workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Select the environment "
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
+
+jobs:
+  manual:
+    runs-on: ubuntu-latest
+    steps:
+      name: Print the environment
+      run: echo "Selected environment is: ${{ inputs.environment }}"
