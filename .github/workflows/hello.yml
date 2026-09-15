@@ -2,8 +2,7 @@
 name: Greet and get code
 
 on:
-  push:
-    branches: [main]
+  workflow_dispatch: 
 
 jobs:
   greet:
