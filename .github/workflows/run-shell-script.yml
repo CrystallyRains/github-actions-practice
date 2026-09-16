@@ -1,0 +1,18 @@
+# Goal: Runs the shell script
+
+name: Run Shell Script
+
+on:
+  workflow_dispatch:
+
+jobs:
+  system-info:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Run system info script
+        run: ./scripts/system_info.sh
+        
