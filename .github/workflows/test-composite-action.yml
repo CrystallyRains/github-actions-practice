@@ -18,7 +18,7 @@ jobs:
         uses: ./.github/actions/setup-and-greet
         with:
           name: Snigdha
-          language: en
+          language: hin
 
       - name: Check output
         run: |
