@@ -1,0 +1,25 @@
+# Goal: This workflow calls the composite action which we created in .github/actions/setup-and-greet/action.yml
+
+name: Test Composite Action
+
+on:
+  workflow_dispatch:
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Run custom greeting action
+        id: greeting
+        uses: ./.github/actions/setup-and-greet
+        with:
+          name: Snigdha
+          language: en
+
+      - name: Check output
+        run: |
+          echo "Greeted: ${{ steps.greeting.outputs.greeted }}"
