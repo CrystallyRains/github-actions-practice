@@ -1,0 +1,18 @@
+name: Docs Filter
+
+on:
+  push:
+    branches:
+      - main
+      - 'release/*'
+    paths-ignore:
+      - '*.md'
+      - 'docs/**'
+
+jobs:
+  code-change:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show trigger
+        run: echo "Workflow triggered because a non-documentation file changed."
